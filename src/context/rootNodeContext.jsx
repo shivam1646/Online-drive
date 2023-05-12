@@ -112,7 +112,7 @@ const INITIAL_NODES = {
   0: {
     id: "0",
     name: "root",
-    childIds: [1, 2],
+    childIds: ["1", "2"],
   },
   1: {
     id: "1",
