@@ -23,11 +23,7 @@ function Home() {
           setSearch={setSearch}
           searchCount={searchCount}
         />
-        <NodesList
-          search={search}
-          setSearch={setSearch}
-          setSearchCount={setSearchCount}
-        />
+        <NodesList search={search} setSearchCount={setSearchCount} />
       </PathContext.Provider>
     </NodesProvider>
   );

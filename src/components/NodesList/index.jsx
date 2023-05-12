@@ -21,11 +21,7 @@ import {
   isDuplicateNode,
 } from "../../utils";
 
-const NodesList = memo(function NodesList({
-  search,
-  setSearch,
-  setSearchCount,
-}) {
+const NodesList = memo(function NodesList({ search, setSearchCount }) {
   const [action, setAction] = useState("");
   const [actionNodeId, setActionNodeId] = useState("");
 
@@ -113,11 +109,7 @@ const NodesList = memo(function NodesList({
           actionNodeId={actionNodeId}
           handleRename={handleRename}
           handleDoubleClick={() => {
-            setSearch({
-              ...search,
-              searchText: "",
-              searching: false,
-            });
+            if (search.searchText) return;
             setPath([...path, node.id]);
           }}
           handleContextMenuClick={(e) => {
@@ -143,7 +135,6 @@ const NodesList = memo(function NodesList({
 
 NodesList.propTypes = {
   search: PropTypes.object,
-  setSearch: PropTypes.func,
   setSearchCount: PropTypes.func,
 };
 
